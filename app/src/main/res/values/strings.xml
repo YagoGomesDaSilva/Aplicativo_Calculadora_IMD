@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Aplicativo_Calculadora_IMD</string>
+    <string name="tv_titulo">Calculadora IMD</string>
+    <string name="tv_dev">Desenvolvido por: Yago Gomes da Silva</string>
+    <string name="btn_media">Média</string>
+    <string name="btn_numerica">Numérica</string>
+    <string name="tv_footer">Desenvolvido por: Yago Gomes da Silva</string>
 </resources>
