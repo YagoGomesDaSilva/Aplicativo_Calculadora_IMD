@@ -39,26 +39,6 @@
             android:textColor="@color/white"
             android:textSize="25sp" />
     </LinearLayout>
-    <LinearLayout
-        android:id="@+id/ll_footer"
-        android:layout_width="0dp"
-        android:layout_height="30dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <TextView
-            android:id="@+id/tv_footer"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/dark_green"
-            android:gravity="center"
-            android:text="@string/tv_footer"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="15sp" />
-    </LinearLayout>
 
     <Button
         android:id="@+id/btn_numerica"
@@ -92,14 +72,25 @@
         android:id="@+id/mainFrameFrag"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/ll_footer"
+        app:layout_constraintBottom_toTopOf="@+id/tv_footer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline2"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toTopOf="@+id/guideline2">
 
     </FrameLayout>
+
+    <TextView
+        android:id="@+id/tv_footer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/dark_green"
+        android:gravity="center"
+        android:text="@string/tv_footer"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

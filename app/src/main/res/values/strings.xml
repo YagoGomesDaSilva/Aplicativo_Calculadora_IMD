@@ -1,10 +1,37 @@
 <resources>
+
+    <!-- Main Activity -->
     <string name="app_name">Aplicativo_Calculadora_IMD</string>
     <string name="tv_titulo">Calculadora IMD</string>
     <string name="tv_dev">Desenvolvido por: Yago Gomes da Silva</string>
     <string name="btn_media">Média</string>
     <string name="btn_numerica">Numérica</string>
     <string name="tv_footer">Desenvolvido por: Yago Gomes da Silva</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Frag Cal Num -->
+    <string name="btn_1">1</string>
+    <string name="btn_2">2</string>
+    <string name="btn_3">3</string>
+    <string name="btn_4">4</string>
+    <string name="btn_5">5</string>
+    <string name="btn_6">6</string>
+    <string name="btn_7">7</string>
+    <string name="btn_8">8</string>
+    <string name="btn_9">9</string>
+    <string name="btn_0">0</string>
+
+    <string name="btn_adicao">+</string>
+    <string name="btn_subtacao">-</string>
+    <string name="btn_multiplicacao">x</string>
+    <string name="btn_divisao">/</string>
+
+    <string name="btn_igualdade">=</string>
+    <string name="btn_limpar">C</string>
+    <string name="btn_ponto">.</string>
+
+    <string name="tv_result"></string>
+    <string name="tv_result_info">Resultado :</string>
+
+
+
 </resources>

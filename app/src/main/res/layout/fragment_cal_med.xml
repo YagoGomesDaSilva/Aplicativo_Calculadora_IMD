@@ -8,15 +8,5 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <TextView
-            android:id="@+id/tv_teste_med"
-            android:layout_width="156dp"
-            android:layout_height="76dp"
-            android:text="med"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="344dp" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_height="match_parent" />
 </FrameLayout>
