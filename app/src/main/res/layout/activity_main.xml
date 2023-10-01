@@ -6,25 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/btn_media"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="@color/dark_green"
-        android:text="@string/btn_media"
-        android:textColor="@color/white"
-        app:backgroundTint="@color/dark_green"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toBottomOf="@+id/ll_menu" />
-
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.50121653" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.13543092" />
 
     <LinearLayout
         android:id="@+id/ll_menu"
@@ -46,20 +39,6 @@
             android:textColor="@color/white"
             android:textSize="25sp" />
     </LinearLayout>
-
-    <Button
-        android:id="@+id/btn_numerica"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="@color/dark_green"
-        android:text="@string/btn_numerica"
-        android:textColor="@color/white"
-        app:backgroundTint="@color/dark_green"
-        app:layout_constraintEnd_toStartOf="@+id/guideline"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ll_menu" />
-
     <LinearLayout
         android:id="@+id/ll_footer"
         android:layout_width="0dp"
@@ -81,7 +60,36 @@
             android:textSize="15sp" />
     </LinearLayout>
 
+    <Button
+        android:id="@+id/btn_numerica"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/dark_green"
+        android:onClick="btnFragmentMangager"
+        android:text="@string/btn_numerica"
+        android:textColor="@color/white"
+        app:backgroundTint="@color/dark_green"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll_menu" />
+
+    <Button
+        android:id="@+id/btn_media"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/dark_green"
+        android:onClick="btnFragmentMangager"
+        android:text="@string/btn_media"
+        android:textColor="@color/white"
+        app:backgroundTint="@color/dark_green"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/ll_menu" />
+
     <FrameLayout
+        android:id="@+id/mainFrameFrag"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/ll_footer"
@@ -93,11 +101,5 @@
 
     </FrameLayout>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.13543092" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
