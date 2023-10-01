@@ -28,7 +28,7 @@
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline5"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.25" />
@@ -44,13 +44,12 @@
             android:id="@+id/btn_1"
             android:layout_width="65dp"
             android:layout_height="65dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:background="@color/dark_green"
             android:text="@string/btn_1"
             android:textSize="12sp"
             app:backgroundTint="@color/dark_green"
             app:layout_constraintEnd_toStartOf="@+id/guideline5"
-            app:layout_constraintHorizontal_bias="0.52"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/guideline3" />
 
@@ -97,7 +96,7 @@
             android:id="@+id/btn_2"
             android:layout_width="65dp"
             android:layout_height="65dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:background="@color/dark_green"
             android:text="@string/btn_2"
             android:textSize="12sp"
@@ -130,7 +129,6 @@
             app:backgroundTint="@color/dark_green"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/guideline4"
-            app:layout_constraintHorizontal_bias="0.52"
             app:layout_constraintStart_toStartOf="@+id/guideline5"
             app:layout_constraintTop_toBottomOf="@+id/btn_8"
             app:layout_constraintVertical_bias="0.0" />
@@ -152,7 +150,7 @@
             android:id="@+id/btn_3"
             android:layout_width="65dp"
             android:layout_height="65dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:background="@color/dark_green"
             android:text="@string/btn_3"
             android:textSize="12sp"
@@ -206,7 +204,7 @@
             android:id="@+id/btn_adicao"
             android:layout_width="65dp"
             android:layout_height="65dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:background="@color/dark_green"
             android:text="@string/btn_adicao"
             android:textSize="12sp"
@@ -269,9 +267,10 @@
 
         <TextView
             android:id="@+id/tv_result"
-            android:layout_width="167dp"
+            android:layout_width="0dp"
             android:layout_height="50dp"
-            android:layout_marginBottom="23dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="15dp"
             android:background="@color/dark_green"
             android:gravity="center"
             android:text="@string/tv_result"
@@ -285,9 +284,10 @@
 
         <TextView
             android:id="@+id/tv_result_info"
-            android:layout_width="167dp"
+            android:layout_width="0dp"
             android:layout_height="50dp"
-            android:layout_marginBottom="23dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginBottom="15dp"
             android:background="@color/dark_green"
             android:gravity="center"
             android:text="@string/tv_result_info"
@@ -304,7 +304,26 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.15" />
+            app:layout_constraintGuide_percent="0.16" />
+
+        <EditText
+            android:id="@+id/ed_input"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="15dp"
+            android:background="@color/dark_green"
+            android:ems="10"
+            android:gravity="center"
+            android:inputType="text"
+            android:text="@string/ed_input"
+            android:textAlignment="gravity"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
