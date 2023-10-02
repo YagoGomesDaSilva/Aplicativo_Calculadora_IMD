@@ -33,6 +33,16 @@
     <string name="tv_result_info">Resultado :</string>
     <string name="ed_input"></string>
 
+    <!-- Frag Cal Med -->
 
+    <string name="tv_info_titulo">Calcule a sua Média</string>
+
+    <string name="ed_input_1">Insira a nota 01</string>
+    <string name="ed_input_2">Insira a nota 02</string>
+    <string name="ed_input_3">Insira a nota 03</string>
+
+    <string name="btn_calcular0">Calcular</string>
+    <string name="tv_situacao">Situação :</string>
+    <string name="tv_situacao_info"></string>
 
 </resources>
