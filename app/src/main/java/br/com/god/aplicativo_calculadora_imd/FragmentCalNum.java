@@ -10,13 +10,12 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class FragmentCalNum extends Fragment {
 
-
-    float input_buffer;
+    float input_buffer = 0;
     String operator_buffer;
-    boolean operator_select = false;
 
     public FragmentCalNum() { }
     @Override
@@ -37,7 +36,7 @@ public class FragmentCalNum extends Fragment {
         this.resultClickListener(btn_result,ed_input,tv_result);
         this.clearClickListener(btn_clear, ed_input,tv_result);
         this.NumberClickListener(view,ed_input);
-        this.operatorClickListener(view);
+        this.operatorClickListener(view,ed_input);
         this.dotClickListener(btn_dot,ed_input);
 
         return view;
@@ -47,13 +46,14 @@ public class FragmentCalNum extends Fragment {
         btn_result.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //calculate(ed_input);
-                ed_input.setText("");
-                tv_result.setText(String.valueOf(input_buffer));
+                if(!ed_input.getText().toString().trim().isEmpty()){
+                    calculate(ed_input);
+                    tv_result.setText(String.valueOf(input_buffer));
+                    ed_input.setText(tv_result.getText().toString());
+                }
             }
         });
     }
-
     private void dotClickListener(Button btn_dot, EditText ed_input) {
         btn_dot.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,7 +78,7 @@ public class FragmentCalNum extends Fragment {
             }
         });
     }
-    public void operatorClickListener(View view) {
+    public void operatorClickListener(View view, EditText ed_input) {
 
         for (int i = 1; i <= 4; i++) {
             int buttonId = getResources().getIdentifier("btn_op_" + i, "id", getActivity().getPackageName());
@@ -86,7 +86,8 @@ public class FragmentCalNum extends Fragment {
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    setOperator(button);
+                    setOperator(button,ed_input);
+                    ed_input.setText("");
                 }
             });
         }
@@ -105,47 +106,46 @@ public class FragmentCalNum extends Fragment {
         }
     }
 
+
     private void setNumber(EditText ed_input , Button button){
-        if(!this.operator_select){
-            ed_input.setText(ed_input.getText() + button.getText().toString());
-        }
-        else {
-            this.operator_select = false;
-            this.calculate( ed_input );
-            ed_input.setText("");
-            ed_input.setText(ed_input.getText() + button.getText().toString());
-        }
-    }
-    private void setOperator(Button button){
-        if(!operator_select){
-            operator_buffer = button.getText().toString();
-            operator_select = true;
-        }
-    }
-    private void clear(EditText ed_input, TextView tv_result){
-        ed_input.setText("");
-        tv_result.setText("");
-        this.input_buffer = 0;
-        this.operator_buffer = "";
-        this.operator_select = false;
+
+        ed_input.setText(ed_input.getText() + button.getText().toString());
     }
     private void calculate(EditText ed_input){
 
         float ed_input_float = Float.valueOf(ed_input.getText().toString());
 
         if (operator_buffer.equals("+")){
-           this.input_buffer =+ ed_input_float;
+            this.input_buffer += ed_input_float;
         }
-        if (operator_buffer == "-"){
-
+        if (operator_buffer.equals("-")){
+            this.input_buffer -= ed_input_float;
         }
-        if (operator_buffer == "*"){
-
+        if (operator_buffer.equals("x")){
+            this.input_buffer *= ed_input_float;
         }
-        if (operator_buffer == "/"){
-
+        if (operator_buffer.equals("/")){
+            if(ed_input_float != 0){
+                this.input_buffer /= ed_input_float;
+            }else{
+                Toast.makeText(getActivity(), "Error! Divisão por zero", Toast.LENGTH_LONG).show();
+            }
         }
 
     }
+    private void setOperator(Button button, EditText ed_input){
+
+        operator_buffer = button.getText().toString();
+
+        if(!ed_input.getText().toString().isEmpty())
+            this.input_buffer = Float.valueOf(ed_input.getText().toString());
+    }
+    private void clear(EditText ed_input, TextView tv_result){
+        ed_input.setText("");
+        tv_result.setText("");
+        this.input_buffer = 0;
+        this.operator_buffer = "";
+    }
+
 
 }
