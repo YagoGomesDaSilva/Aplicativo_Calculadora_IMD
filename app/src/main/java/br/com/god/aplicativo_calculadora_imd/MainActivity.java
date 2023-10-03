@@ -18,11 +18,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         this.fragCalMed = new FragmentCalMed();
         this.fragCalNum = new FragmentCalNum();
 
         this.swapFragment(R.id.mainFrameFrag,fragCalNum);
-        this.createAlertDialog("Bem Vindo ao App!","Obigado!");
+        this.createAlertDialog("Bem Vindo ao App!","Obrigado!");
 
 
     }
