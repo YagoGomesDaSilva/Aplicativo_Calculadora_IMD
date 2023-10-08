@@ -68,10 +68,11 @@ public class FragmentCalMed extends Fragment {
         }
         else
         {
-            float resulMedia = calculateMedia(ed_inputs,edCountEmpty);
+            float sumNotas = sumNotas( ed_inputs);
+            float resulMedia = calculateMedia(sumNotas,edCountEmpty);
 
             if(edCountEmpty == 2 || edCountEmpty == 1){
-                exibirToast(resulMedia);
+                exibirToast(sumNotas);
                 clearEditText(ed_inputs);
             }
             else
@@ -90,29 +91,24 @@ public class FragmentCalMed extends Fragment {
             }
         }
     }
+    private float sumNotas(List<EditText> edInputs){
+        auxmedia(edInputs);
+        return (Float.valueOf(edInputs.get(0).getText().toString()) +
+                Float.valueOf(edInputs.get(1).getText().toString()) +
+                Float.valueOf(edInputs.get(2).getText().toString()) );
+    }
     private void exibirToast(float resulMedia) {
         Toast.makeText(getActivity(), "Falta " + (21.0-resulMedia) + " para Aprovação\n Falta " + (15.0-resulMedia) + " para Aprovação por Nota", Toast.LENGTH_LONG).show();
     }
-    private float calculateMedia(List<EditText> edInputs, int edCountEmpty) {
+    private float calculateMedia(float sumNotas, int edCountEmpty) {
 
         if(edCountEmpty == 2)
-        {   auxmedia(edInputs);
-            return (Float.valueOf(edInputs.get(0).getText().toString()) +
-                    Float.valueOf(edInputs.get(1).getText().toString()) +
-                    Float.valueOf(edInputs.get(2).getText().toString()) );
-        }
+            return sumNotas;
         if(edCountEmpty == 1)
-        {   auxmedia(edInputs);
-            return (Float.valueOf(edInputs.get(0).getText().toString()) +
-                    Float.valueOf(edInputs.get(1).getText().toString()) +
-                    Float.valueOf(edInputs.get(2).getText().toString()) ) /2;
-        }
+            return sumNotas/2;
         if(edCountEmpty == 0)
-        {  auxmedia(edInputs);
-           return  (Float.valueOf(edInputs.get(0).getText().toString()) +
-                    Float.valueOf(edInputs.get(1).getText().toString()) +
-                    Float.valueOf(edInputs.get(2).getText().toString()) ) /3;
-        }
+           return  sumNotas/3;
+
         return 0;
     }
     private void auxmedia(List<EditText> ed_inputs){
